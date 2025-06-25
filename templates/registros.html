@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registros Guardados</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #eef; }
+        h1 { color: #003366; }
+        table { border-collapse: collapse; width: 100%; background: white; }
+        th, td { border: 1px solid #aaa; padding: 8px; text-align: left; }
+        th { background-color: #003366; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Registros de Ingreso</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Día</th>
+                <th>Mes</th>
+                <th>Año</th>
+                <th>Hora Ingreso</th>
+                <th>Nombres</th>
+                <th>Documento</th>
+                <th>Motivo</th>
+                <th>EPS</th>
+                <th>ARL</th>
+                <th>Autoriza</th>
+                <th>Emergencia</th>
+                <th>Celular</th>
+                <th>Firma</th>
+                <th>Hora Salida</th>
+                <th>Observaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fila in registros %}
+            <tr>
+                {% for dato in fila %}
+                <td>{{ dato }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
